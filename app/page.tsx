@@ -1,3 +1,4 @@
+import AboutMe from "./about-me";
 import Introduction from "./introduction";
 import Projects from "./projects";
 import Skills from "./skills";
@@ -8,6 +9,7 @@ export default function Home() {
       <Introduction />
       <Projects />
       <Skills />
+      <AboutMe />
     </>
   );
 }
