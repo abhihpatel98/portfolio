@@ -2,6 +2,7 @@
 
 @theme inline {
   --color-primary: var(--primary);
+  --color-hover: var(--hover);
   --color-white: var(--white);
   --color-gray: var(--gray);
   --font-sans: var(--font-geist-sans);
@@ -12,6 +13,7 @@
   :root {
     --background: #13242A;
     --primary: #00747A;
+    --hover: #ABB2BF32;
     --white: #fff;
     --gray: #ABB2BF;
   }

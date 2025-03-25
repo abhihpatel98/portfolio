@@ -33,7 +33,7 @@ export default function RootLayout({
       <body
         className={`${firaCode.variable} ${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <Header />
+        <Header name="Abhi" />
         {children}
       </body>
     </html>
