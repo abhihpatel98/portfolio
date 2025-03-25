@@ -31,7 +31,7 @@ const Introduction: React.FC = () => {
         />
         <Image
           className="dots absolute bottom-14 right-2 z-10"
-          src="/svg/dots.svg"
+          src="/svg/dots-grid.svg"
           alt="Dots"
           width={70}
           height={70}

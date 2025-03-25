@@ -12,14 +12,14 @@ const Skills: React.FC = () => {
         <div className="images relative">
           <Image
             className="absolute top-3 left-5"
-            src={"/svg/dots.svg"}
+            src={"/svg/dots-grid.svg"}
             alt={"Dots"}
             width={50}
             height={50}
           />
           <Image
             className="absolute top-55 right-40"
-            src={"/svg/dots.svg"}
+            src={"/svg/dots-grid.svg"}
             alt={"Dots"}
             width={50}
             height={50}
