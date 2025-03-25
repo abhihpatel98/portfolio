@@ -25,14 +25,14 @@ const Introduction: React.FC = () => {
         <Image
           className="lines absolute top-44 left-4 -z-10"
           src="/svg/lines.svg"
-          alt="Avater"
+          alt="Lines"
           width={150}
           height={150}
         />
         <Image
           className="dots absolute bottom-14 right-2 z-10"
           src="/svg/dots.svg"
-          alt="Avater"
+          alt="Dots"
           width={70}
           height={70}
         />
