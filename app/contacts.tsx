@@ -2,9 +2,7 @@ import TitleWithDevider from "@/components/title-with-devider/title-with-devider
 import { FaLinkedin } from "react-icons/fa";
 import { MdOutlineEmail, MdOutlineLocalPhone } from "react-icons/md";
 
-interface ContactsProps {}
-
-const Contacts: React.FC<ContactsProps> = () => {
+const Contacts: React.FC = () => {
   return (
     <section id="contacts" className="contacts">
       <TitleWithDevider>
@@ -12,8 +10,8 @@ const Contacts: React.FC<ContactsProps> = () => {
       </TitleWithDevider>
       <div className="description flex flex-row gap-2">
         <p>
-          Let's connect and bring ideas to life! Whether it's coding a sleek app
-          or tackling a tough challenge, I'm just a message away and excited to
+          Let&apos;s connect and bring ideas to life! Whether it&apos;s coding a sleek app
+          or tackling a tough challenge, I&apos;m just a message away and excited to
           chat.
         </p>
         <div className="contact-info">

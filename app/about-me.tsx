@@ -1,20 +1,19 @@
 import TitleWithDevider from "@/components/title-with-devider/title-with-devider";
 
-interface AboutMeProps {}
 
-const AboutMe: React.FC<AboutMeProps> = () => {
+const AboutMe: React.FC = () => {
   return (
     <section id="about-me" className="about-me">
       <TitleWithDevider>
         <span className="hash-tag text-primary">#</span>about-me
       </TitleWithDevider>
       <div className="about-me-content flex flex-col gap-8">
-        <p>Hello i'm Abhi!</p>
+        <p>Hello i&apos;m Abhi!</p>
         <p>
           I am a dedicated full-stack developer with over two years of
           experience crafting scalable web applications. I specialize in
           building responsive frontends using React and Next.js, paired with
-          robust backends powered by .NET and PostgreSQL. Based in Toronto, I'm
+          robust backends powered by .NET and PostgreSQL. Based in Toronto, I&apos;m
           passionate about solving complex problems with clean, efficient code.
           My goal is to create solutions that enhance user experiences and drive
           innovation.
@@ -30,9 +29,9 @@ const AboutMe: React.FC<AboutMeProps> = () => {
         </p>
         <p>
           With a postgraduate degree in Information Technology Solutions from
-          Humber College and a Bachelor's in Computer Engineering from Gujarat
-          Technological University, I'm equipped with a solid technical
-          foundation. I'm eager to apply my skills to impactful,
+          Humber College and a Bachelor&apos;s in Computer Engineering from Gujarat
+          Technological University, I&apos;m equipped with a solid technical
+          foundation. I&apos;m eager to apply my skills to impactful,
           forward-thinking projects.
         </p>
       </div>

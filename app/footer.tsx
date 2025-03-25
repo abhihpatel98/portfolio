@@ -1,6 +1,4 @@
-interface FooterProps {}
-
-const Footer: React.FC<FooterProps> = () => {
+const Footer: React.FC = () => {
   return (
     <footer className="footer mt-10">
       <hr />

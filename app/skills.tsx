@@ -2,9 +2,7 @@ import Image from "next/image";
 import Card from "@/components/card/card";
 import TitleWithDevider from "@/components/title-with-devider/title-with-devider";
 
-interface SkillsProps {}
-
-const Skills: React.FC<SkillsProps> = () => {
+const Skills: React.FC = () => {
   return (
     <section id="skills" className="skills">
       <TitleWithDevider>

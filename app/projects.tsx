@@ -4,8 +4,6 @@ import TitleWithDevider from "@/components/title-with-devider/title-with-devider
 import Link from "next/link";
 import { FaExternalLinkAlt } from "react-icons/fa";
 
-interface ProjectsProps {}
-
 const ProjectDetails = ({
   title,
   description,
@@ -32,7 +30,7 @@ const ProjectDetails = ({
   );
 };
 
-const Projects: React.FC<ProjectsProps> = () => {
+const Projects: React.FC = () => {
   return (
     <section id="projects" className="projects">
       <TitleWithDevider>

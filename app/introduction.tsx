@@ -1,9 +1,7 @@
 import Button from "@/components/button/button";
 import Image from "next/image";
 
-interface IntroductionProps {}
-
-const Introduction: React.FC<IntroductionProps> = () => {
+const Introduction: React.FC = () => {
   return (
     <section id="home" className="introduction flex items-center mt-10">
       <div className="intro-container flex-1/2">
