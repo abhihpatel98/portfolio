@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono, Fira_Code } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/header/header";
+import Footer from "./footer";
 
 const firaCode = Fira_Code({
   variable: "--font-fira-code",
@@ -35,6 +36,7 @@ export default function RootLayout({
       >
         <Header name="Abhi" />
         {children}
+        <Footer />
       </body>
     </html>
   );

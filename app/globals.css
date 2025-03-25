@@ -11,11 +11,11 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #13242A;
-    --primary: #00747A;
-    --hover: #ABB2BF32;
+    --background: #13242a;
+    --primary: #00747a;
+    --hover: #abb2bf32;
     --white: #fff;
-    --gray: #ABB2BF;
+    --gray: #abb2bf;
   }
 }
 
@@ -26,7 +26,14 @@ html {
 body {
   background: var(--background);
   color: var(--gray);
-  margin: 2% 10%;
+}
+
+main {
+  margin: 0% 10%;
+}
+
+nav {
+  padding: 2% 10%
 }
 
 a:hover {
