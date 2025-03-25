@@ -5,7 +5,7 @@ interface IntroductionProps {}
 
 const Introduction: React.FC<IntroductionProps> = () => {
   return (
-    <section className="introduction flex items-center mt-10">
+    <section id="home" className="introduction flex items-center mt-10">
       <div className="intro-container flex-1/2">
         <h1 className="intro-text text-3xl font-semibold">
           Abhi is a <span className="text-primary">Full Stack Developer</span>{" "}
@@ -13,7 +13,7 @@ const Introduction: React.FC<IntroductionProps> = () => {
           <span className="text-primary">two years of experience</span> in the
           industry.
         </h1>
-        <Button className="mt-5">Contact me!!</Button>
+        <a href="#contacts"><Button className="mt-5">Contact me!!</Button></a>
       </div>
       <div className="avatar-container relative flex-1/5">
         <Image

@@ -6,7 +6,7 @@ interface SkillsProps {}
 
 const Skills: React.FC<SkillsProps> = () => {
   return (
-    <section className="skills">
+    <section id="skills" className="skills">
       <TitleWithDevider>
         <span className="hash-tag text-primary">#</span>skills
       </TitleWithDevider>

@@ -34,7 +34,7 @@ const ProjectDetails = ({
 
 const Projects: React.FC<ProjectsProps> = () => {
   return (
-    <section className="projects">
+    <section id="projects" className="projects">
       <TitleWithDevider>
         <span className="hash-tag text-primary">#</span>projects
       </TitleWithDevider>

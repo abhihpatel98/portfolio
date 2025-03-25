@@ -4,7 +4,7 @@ interface AboutMeProps {}
 
 const AboutMe: React.FC<AboutMeProps> = () => {
   return (
-    <section className="about-me">
+    <section id="about-me" className="about-me">
       <TitleWithDevider>
         <span className="hash-tag text-primary">#</span>about-me
       </TitleWithDevider>

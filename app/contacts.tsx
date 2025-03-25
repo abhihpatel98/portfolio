@@ -6,7 +6,7 @@ interface ContactsProps {}
 
 const Contacts: React.FC<ContactsProps> = () => {
   return (
-    <section className="contacts">
+    <section id="contacts" className="contacts">
       <TitleWithDevider>
         <span className="hash-tag text-primary">#</span>contacts
       </TitleWithDevider>
