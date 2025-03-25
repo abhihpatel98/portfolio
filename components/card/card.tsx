@@ -1,5 +1,5 @@
 interface CardProps extends React.HTMLAttributes<HTMLDivElement> {
-  image: {
+  image?: {
     url: string;
     alt: string;
   };
@@ -18,7 +18,7 @@ const Card: React.FC<CardProps> = ({
       {...props}
       className={`card flex flex-col divide-y-[1px] border border-white ${props.className}`}
     >
-      {image && image?.url && (
+      {image && (
         <img className="image" src={image.url} alt={image.alt} />
       )}
       <div className="section-one px-2 py-1">{sectionOneContent}</div>
