@@ -30,7 +30,7 @@ const Introduction: React.FC = () => {
           height={150}
         />
         <Image
-          className="dots absolute bottom-14 right-2 z-10"
+          className="dots absolute bottom-14 right-2 z-0"
           src="/svg/dots-grid.svg"
           alt="Dots"
           width={70}
