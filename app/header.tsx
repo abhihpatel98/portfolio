@@ -12,15 +12,60 @@ interface HeaderProps {
 const Header: React.FC<HeaderProps> = ({name = ""}) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const [activeSection, setActiveSection] = useState('home');
   
-  // Handle scroll effect for header
+  // Handle scroll effect for header and bottom detection
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 10);
+      
+      // Check if we're at the bottom of the page
+      const isAtBottom = window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 100;
+      if (isAtBottom) {
+        setActiveSection('contacts');
+        window.history.replaceState(null, '', '#contacts');
+      }
     };
     
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  // Handle section visibility and URL updates
+  useEffect(() => {
+    const sections = document.querySelectorAll('section[id]');
+    
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const id = entry.target.getAttribute('id');
+            if (id) {
+              setActiveSection(id);
+              // Update URL without triggering scroll
+              const newUrl = `#${id}`;
+              if (window.location.hash !== newUrl) {
+                window.history.replaceState(null, '', newUrl);
+              }
+            }
+          }
+        });
+      },
+      {
+        rootMargin: '-20% 0px -80% 0px',
+        threshold: 0
+      }
+    );
+
+    sections.forEach((section) => {
+      observer.observe(section);
+    });
+
+    return () => {
+      sections.forEach((section) => {
+        observer.unobserve(section);
+      });
+    };
   }, []);
 
   // Close menu when clicking outside
@@ -81,18 +126,24 @@ const Header: React.FC<HeaderProps> = ({name = ""}) => {
           
           {/* Desktop navigation */}
           <ul className="nav-list hidden md:flex items-center space-x-6">
-            <NavLink text="home" href="#home" />
-            <NavLink text="projects" href="#projects" />
-            <NavLink text="skills" href="#skills" />
-            <NavLink text="about-me" href="#about-me" />
-            <NavLink text="contacts" href="#contacts" />
+            <NavLink text="home" href="#home" isActive={activeSection === 'home'} />
+            <NavLink text="projects" href="#projects" isActive={activeSection === 'projects'} />
+            <NavLink text="skills" href="#skills" isActive={activeSection === 'skills'} />
+            <NavLink text="about-me" href="#about-me" isActive={activeSection === 'about-me'} />
+            <NavLink text="contacts" href="#contacts" isActive={activeSection === 'contacts'} />
           </ul>
           
           {/* Mobile navigation overlay */}
-          <div className={`md:hidden fixed inset-0 bg-background/95 backdrop-blur-lg transition-transform duration-300 ease-in-out ${
-            isMenuOpen ? 'translate-x-0' : 'translate-x-full'
-          }`}>
-            <div className="flex flex-col h-full">
+          <div 
+            className={`md:hidden fixed inset-0 transition-transform duration-300 ease-in-out ${
+              isMenuOpen ? 'translate-x-0' : 'translate-x-full'
+            }`}
+          >
+            {/* Backdrop */}
+            <div className="absolute inset-0 bg-background/98 backdrop-blur-xl" />
+            
+            {/* Content */}
+            <div className="relative h-full flex flex-col">
               {/* Close button at the top */}
               <div className="flex justify-end p-4">
                 <button 
@@ -107,11 +158,11 @@ const Header: React.FC<HeaderProps> = ({name = ""}) => {
               {/* Navigation links */}
               <div className="flex-1 flex items-center justify-center px-6">
                 <ul className="flex flex-col items-center space-y-8">
-                  <NavLink text="home" href="#home" onClick={() => setIsMenuOpen(false)} />
-                  <NavLink text="projects" href="#projects" onClick={() => setIsMenuOpen(false)} />
-                  <NavLink text="skills" href="#skills" onClick={() => setIsMenuOpen(false)} />
-                  <NavLink text="about-me" href="#about-me" onClick={() => setIsMenuOpen(false)} />
-                  <NavLink text="contacts" href="#contacts" onClick={() => setIsMenuOpen(false)} />
+                  <NavLink text="home" href="#home" onClick={() => setIsMenuOpen(false)} isActive={activeSection === 'home'} />
+                  <NavLink text="projects" href="#projects" onClick={() => setIsMenuOpen(false)} isActive={activeSection === 'projects'} />
+                  <NavLink text="skills" href="#skills" onClick={() => setIsMenuOpen(false)} isActive={activeSection === 'skills'} />
+                  <NavLink text="about-me" href="#about-me" onClick={() => setIsMenuOpen(false)} isActive={activeSection === 'about-me'} />
+                  <NavLink text="contacts" href="#contacts" onClick={() => setIsMenuOpen(false)} isActive={activeSection === 'contacts'} />
                 </ul>
               </div>
             </div>
