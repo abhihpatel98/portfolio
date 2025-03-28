@@ -22,11 +22,13 @@
 html {
   font-family: Fira Code, Arial, Helvetica, sans-serif;
   scroll-behavior: smooth;
+  scroll-padding-top: 5rem;
 }
 
 body {
   background: var(--background);
   color: var(--gray);
+  padding-top: 4rem;
 }
 
 nav {
@@ -35,6 +37,7 @@ nav {
 
 main {
   margin: 0% 10%;
+  padding-top: 1rem;
 }
 
 nav {

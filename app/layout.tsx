@@ -33,10 +33,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${firaCode.variable} ${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${firaCode.variable} ${geistSans.variable} ${geistMono.variable} antialiased min-h-screen flex flex-col`}
       >
         <Header name="Abhi" />
-        {children}
+        <div className="flex-1">
+          {children}
+        </div>
         <Footer />
         <SpeedInsights />
       </body>

@@ -6,9 +6,11 @@ interface TitleWithDeviderProps {
 
 const TitleWithDevider: React.FC<TitleWithDeviderProps> = ({children}) => {
   return (
-    <div className="title-with-devider my-10 inline-flex items-center">
-      <h1 className="title text-2xl font-semibold text-white">{children}</h1>
-      <hr className="horizontal-line w-md ml-4 text-primary"/>
+    <div className="title-with-devider my-8 md:my-10 flex flex-col sm:flex-row items-start sm:items-center">
+      <h1 className="title text-xl md:text-2xl font-semibold text-white whitespace-nowrap mb-4 sm:mb-0 sm:mr-6">
+        {children}
+      </h1>
+      <hr className="horizontal-line w-full sm:w-48 md:w-64 lg:w-80 h-[2px] bg-primary border-0"/>
     </div>
   );
 };

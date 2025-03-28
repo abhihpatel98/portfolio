@@ -16,13 +16,19 @@ const Card: React.FC<CardProps> = ({
   return (
     <div
       {...props}
-      className={`card flex flex-col divide-y-[1px] border border-white ${props.className}`}
+      className={`card flex flex-col divide-y-[1px] border border-white h-full ${props.className}`}
     >
       {image && (
-        <img className="image" src={image.url} alt={image.alt} />
+        <div className="card-image-container relative w-full pt-[56.25%]">
+          <img 
+            className="image absolute top-0 left-0 w-full h-full object-cover" 
+            src={image.url} 
+            alt={image.alt} 
+          />
+        </div>
       )}
-      <div className="section-one px-2 py-1">{sectionOneContent}</div>
-      <div className="section-two h-full px-2 py-1">{sectionTwoContent}</div>
+      <div className="section-one px-3 py-2 bg-opacity-80">{sectionOneContent}</div>
+      <div className="section-two flex-grow flex flex-col px-3 py-3">{sectionTwoContent}</div>
     </div>
   );
 };
