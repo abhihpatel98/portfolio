@@ -3,7 +3,8 @@ import { Geist, Geist_Mono, Fira_Code } from "next/font/google";
 import "./globals.css";
 import Header from "@/app/header";
 import Footer from "./footer";
-import { SpeedInsights } from "@vercel/speed-insights/next"
+import { SpeedInsights } from "@vercel/speed-insights/next";
+import { Analytics } from "@vercel/analytics/react";
 
 const firaCode = Fira_Code({
   variable: "--font-fira-code",
@@ -36,11 +37,10 @@ export default function RootLayout({
         className={`${firaCode.variable} ${geistSans.variable} ${geistMono.variable} antialiased min-h-screen flex flex-col`}
       >
         <Header name="Abhi" />
-        <div className="flex-1">
-          {children}
-        </div>
+        <div className="flex-1">{children}</div>
         <Footer />
         <SpeedInsights />
+        <Analytics />
       </body>
     </html>
   );
