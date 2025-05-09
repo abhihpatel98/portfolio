@@ -31,7 +31,7 @@ const Contacts: React.FC = () => {
                   href="mailto:abhipatel181998@gmail.com"
                   className="text-sm md:text-base hover:text-primary transition-colors break-all text-left"
                 >
-                  abhipatel181998@gmail.com
+                  abhihpatel98@gmail.com
                 </a>
               </div>
               

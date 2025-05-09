@@ -27,7 +27,7 @@ const Card: React.FC<CardProps> = ({
           />
         </div>
       )}
-      <div className="section-one px-3 py-2 bg-opacity-80">{sectionOneContent}</div>
+      {/* <div className="section-one px-3 py-2 bg-opacity-80">{sectionOneContent}</div> */}
       <div className="section-two flex-grow flex flex-col px-3 py-3">{sectionTwoContent}</div>
     </div>
   );
